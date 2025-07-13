@@ -1,11 +1,10 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'; // Import useAuth hook
+import { useAuth } from '../context/AuthContext'; 
 
 const PrivateRoute = ({ children }) => {
-  const { user, loading } = useAuth(); // Get user and loading state from AuthContext
+  const { user, loading } = useAuth(); 
 
-  // While authentication status is being checked, you might want to show a loading spinner
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -14,8 +13,7 @@ const PrivateRoute = ({ children }) => {
     );
   }
 
-  // If user is authenticated, render the children (the protected component)
-  // Otherwise, redirect to the login page
+
   return user ? children : <Navigate to="/login" replace />;
 };
 

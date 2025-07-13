@@ -56,7 +56,6 @@ const StatsPage = () => {
 
       {stats && (
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 animate-fade-in">
-          {/* Total Complaints */}
           <div className="bg-white/60 backdrop-blur-md border border-blue-200 p-6 rounded-3xl shadow-xl hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-3 mb-4 text-blue-700">
               <BarChart2 size={28} />
@@ -65,7 +64,6 @@ const StatsPage = () => {
             <p className="text-center text-6xl font-extrabold text-blue-600">{stats.totalComplaints}</p>
           </div>
 
-          {/* Top Complaint Categories */}
           <div className="bg-white/60 backdrop-blur-md border border-purple-200 p-6 rounded-3xl shadow-xl hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-3 mb-4 text-purple-700">
               <PieChart size={28} />
@@ -85,7 +83,6 @@ const StatsPage = () => {
             )}
           </div>
 
-          {/* Flatmates with Most Complaints */}
           <div className="bg-white/60 backdrop-blur-md border border-red-200 p-6 rounded-3xl shadow-xl hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-3 mb-4 text-red-700">
               <Users size={28} />
@@ -105,7 +102,6 @@ const StatsPage = () => {
             )}
           </div>
 
-          {/* Flatmate Problem of the Week */}
           <div className="bg-white/60 backdrop-blur-md border border-green-200 p-6 rounded-3xl shadow-xl hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-3 mb-4 text-green-700">
               <Flame size={28} />

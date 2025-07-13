@@ -9,7 +9,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // On mount: check localStorage
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
@@ -17,7 +16,6 @@ export const AuthProvider = ({ children }) => {
         const parsed = JSON.parse(storedUser);
         setUser(parsed);
 
-        // Optional: set auth header globally if token present
         if (parsed?.token) {
           API.defaults.headers.common['Authorization'] = `Bearer ${parsed.token}`;
         }

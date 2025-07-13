@@ -15,17 +15,17 @@ const ComplaintSchema = mongoose.Schema(
         complaintType: {
             type: String,
             required: true,
-            enum: ['Noise', 'Cleanliness', 'Bills', 'Pets', 'Other'], // Enforce specific types
+            enum: ['Noise', 'Cleanliness', 'Bills', 'Pets', 'Other'],
         },
         severityLevel: {
             type: String,
             required: true,
-            enum: ['Mild', 'Annoying', 'Major', 'Nuclear'], // Enforce specific levels
+            enum: ['Mild', 'Annoying', 'Major', 'Nuclear'],
         },
         filedBy: {
-            type: mongoose.Schema.Types.ObjectId, // Reference to the User who filed the complaint
+            type: mongoose.Schema.Types.ObjectId, 
             required: true,
-            ref: 'User', // Refers to the 'User' model
+            ref: 'User', 
         },
         flatCode: {
             type: String,
@@ -46,26 +46,23 @@ const ComplaintSchema = mongoose.Schema(
             default: false,
         },
         resolvedBy: {
-            type: mongoose.Schema.Types.ObjectId, // Reference to the User who resolved it
+            type: mongoose.Schema.Types.ObjectId, 
             ref: 'User',
             default: null,
         },
-        // For auto-archiving downvoted complaints
         downvotedAt: {
             type: Date,
             default: null,
         },
-        // Arrays to store user IDs who upvoted/downvoted to prevent multiple votes
         upvotedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
         downvotedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-        // Field to store suggested punishment
         suggestedPunishment: {
             type: String,
             default: null,
         },
     },
     {
-        timestamps: true, // Adds createdAt and updatedAt timestamps
+        timestamps: true, 
     }
 );
 

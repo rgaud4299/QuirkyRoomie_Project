@@ -49,7 +49,6 @@ const DashboardPage = () => {
 
   if (!user) return <div className="text-center mt-10 text-xl">Please log in to view dashboard.</div>;
 
-  // Find the most upvoted unresolved complaint for Problem of the Week
   const problemOfWeek = [...complaints]
     .filter(c => !c.resolved)
     .sort((a, b) => b.upvotes - a.upvotes)[0];
@@ -67,7 +66,6 @@ const DashboardPage = () => {
         </p>
       </div>
 
-      {/* Problem of the Week */}
       {problemOfWeek && (
         <div className="max-w-5xl mx-auto mb-10 bg-yellow-100 border border-yellow-300 p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-bold mb-2 text-yellow-800 flex items-center gap-2">
@@ -79,7 +77,6 @@ const DashboardPage = () => {
         </div>
       )}
 
-      {/* Complaint Cards */}
       {error && <p className="text-center text-red-600 mb-6">{error}</p>}
 
       {loading ? (
